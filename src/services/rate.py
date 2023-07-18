@@ -1,5 +1,6 @@
 from functools import lru_cache
 from typing import Dict, List, Optional, Tuple, Union
+
 import orjson
 import tortoise
 from fastapi import Depends

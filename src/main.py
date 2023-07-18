@@ -7,7 +7,6 @@ from src.api.v1 import rate
 from src.core import config
 from src.db import psql, redis
 
-
 app = FastAPI(
     title='REST API для расчёта стоимости страхования',
     description='Сервис по расчёту стоимости страхования в зависимости от типа груза и объявленной стоимости (ОС).',

@@ -13,7 +13,8 @@ class Settings(BaseSettings):
     REDIS_PORT: int = 6379
 
     class Config:
-        env_file = './core/.env'
+        env_file = './src/core/.env'  # for Docker
+        # env_file = './core/.env'  # for local
 
 
 settings = Settings()
