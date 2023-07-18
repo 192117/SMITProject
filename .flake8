@@ -2,4 +2,4 @@
 max-line-length = 120
 exclude = .venv,
 extend-immutable-calls = Depends, fastapi.Depends, fastapi.params.Depends
-ignore = A003, VNE003, CCE001
+ignore = A003, VNE003, CCE001, CCR001

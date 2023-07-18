@@ -5,17 +5,20 @@ from tortoise.contrib.pydantic import pydantic_model_creator
 
 
 class UUIDMixin(models.Model):
+    """An abstract base model class that adds UUID and created fields to models."""
 
     id = fields.UUIDField(pk=True, default=uuid.uuid4)
+    created = fields.DatetimeField(auto_now_add=True)
 
     class Meta:
         abstract = True
 
     class PydanticMeta:
-        exclude = ['id']
+        exclude = ['id', 'created']
 
 
 class Rate(UUIDMixin):
+    """A model describing coefficients for calculating insurance costs for various cargo types based on the date."""
     date = fields.DateField()
     cargo = fields.CharField(max_length=100)
     value = fields.FloatField()
