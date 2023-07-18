@@ -27,6 +27,7 @@ class Rate(UUIDMixin):
         table = 'Коэффициент'
         description = 'Модель описывающая коэффициент для расчета стоимости страхования грузов различных типов в' \
                       'зависимости от даты'
+        unique_together = ('date', 'cargo')
 
 
 RatePydantic = pydantic_model_creator(Rate, name='Rate')

@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     REDIS_PORT: int = 6379
 
     class Config:
-        env_file = './database/.env'
+        env_file = './core/.env'
 
 
 settings = Settings()
@@ -23,5 +23,6 @@ POSTGRES_USER = settings.POSTGRES_USER
 POSTGRES_PASSWORD = settings.POSTGRES_PASSWORD
 POSTGRES_HOST = settings.POSTGRES_HOST
 POSTGRES_PORT = settings.POSTGRES_PORT
+
 REDIS_HOST = settings.REDIS_HOST
 REDIS_PORT = settings.REDIS_PORT
