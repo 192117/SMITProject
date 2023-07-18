@@ -19,10 +19,13 @@ services:
   service:
     build: .
     container_name: smit_service
+    depends_on:
+      db:
+        condition: service_healthy
     command: >
       bash -c "uvicorn src.main:app --host 0.0.0.0 --port 8002"
     ports:
-      - '8888:8002'
+      - '8002:8002'
     volumes:
       - ./src/core/.env.docker:/app/src/core/.env
   redis:
@@ -30,8 +33,7 @@ services:
     container_name: smit_redis
     expose:
       - '6379'
-    ports:
-      - '9998:8001'
+      - '8001'
     volumes:
       - redis_data:/data
 
