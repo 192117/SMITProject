@@ -23,9 +23,9 @@ services:
       db:
         condition: service_healthy
     command: >
-      bash -c "uvicorn src.main:app --host 0.0.0.0 --port 8002"
+      bash -c "uvicorn src.main:app --host 0.0.0.0 --port 8000"
     ports:
-      - '8002:8002'
+      - '8008:8000'
     volumes:
       - ./src/core/.env.docker:/app/src/core/.env
   redis:
